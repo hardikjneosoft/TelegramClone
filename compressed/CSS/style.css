@@ -41,6 +41,7 @@ main {
     display: flex;
     /* align-items: start; */
     width: 100%;
+    height: 100vh;
 }
 
 
@@ -177,7 +178,20 @@ main {
 
 @media (max-width:600px)
 {
-    
+    .right-side .header-container .header .search-box{
+        display:none;
+    }
+    .right-side .body-container .chat-list .chat-box .chat-details{
+        display: none;
+        /* flex-basis: 5%; */
+    }
+    .right-side{
+        min-width: 8rem;
+    }
+    .right-side .body-container .chat-list .chat-box .chat-img{
+        flex-basis: 100%;
+    }
+
 }
 .right-side .body-container .chat-list .chat-box{
     display: flex;
@@ -192,7 +206,7 @@ main {
 .right-side .chat-list .chat-box .chat-img{
     width: 5.4rem;
     height: 5.4rem;
-    flex-basis:15% ; /*todo: */
+    flex-basis:20% ; 
     justify-content: center;
 }
 
@@ -264,20 +278,23 @@ main {
 } */
 
 .right-side .files{
-    position: relative;
-    max-width: 42rem;
+    position: absolute;
+    top: 8rem;
+
+    max-width: 100%;
     min-width: 40rem;
     height: 91.1vh;
     background-color: var(--whiteColor);
     z-index: 1;
+    overflow-x: scroll;
     transition: all .5 ease;
-    visibility: hidden;
+    display: none;
     opacity: 0;
     transform: all .5 ease;
 }
 
 .right-side .files.active{
-    visibility: visible;
+    display: block;
     opacity: 1;
     transform:scale(1) ;
 }
@@ -578,7 +595,7 @@ main {
     font-weight: 500;
     color: var(--borderColor);
 }
-.content .container .message-box .micro{
+/* .content .container .message-box .micro{
     width: 5rem;
     height: 5rem;
     border-radius: 50%;
@@ -589,6 +606,11 @@ main {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+} */
+
+
+.content .container .message-box .message-content .fa-paper-plane{
+   display: none;
 }
 
 /* End here COntent section */
