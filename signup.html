@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Signup</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        h3 {
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            width: 22%;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            width: 7rem;
+            margin-bottom: 10px;
+        }
+        .form-group {
+            position: relative;
+            margin: 20px 0;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 9px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background-color: white;
+        }
+        .form-group label {
+            position: absolute;
+            top: -8px;
+            left: 10px;
+            background: white;
+            padding: 0 5px;
+            font-size: 12px;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .checkbox-container input {
+            width: auto;
+            margin: 0;
+            margin-right: 10px;
+        }
+        .link {
+            color: #0088cc;
+            text-decoration: none;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+        .form-group input:hover, .form-group select:hover {
+            border-color: rgba(0, 128, 255, 0.905);
+        }
+        .form-group input:focus, .form-group select:focus {
+            border: 2px solid rgba(0, 128, 255, 0.905);
+            box-shadow: 0 0 5px rgba(0, 128, 255, 0.3);
+            outline: none;
+        }
+        i {
+            color: black;
+            font-size: 2rem;
+            font-weight: lighter;
+            padding-bottom: 10px;
+        }
+        .form-group.has-error input,
+        .form-group.has-error select {
+            border-color: red;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <img src="https://telegram.org/img/t_logo.png" alt="Telegram Logo"> -->
+        <h2>Telegram Signup</h2>
+        <p>Fill in the details to create your account.</p>
+        <form id="signup-form">
+            <div class="form-group">
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name">
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name">
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                    <option value="IN" selected>🇮🇳 India</option>
+                    <!-- Add more countries here if needed -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="phone">Your phone number</label>
+                <input type="tel" id="phone" name="phone" value="+91 ">
+            </div>
+            <a href="./login-code.html"><i class="fas fa-arrow-right"></i></a>
+            <div class="checkbox-container">
+                <input type="checkbox" id="keep-signed-in" name="keep-signed-in" checked>
+                <label for="keep-signed-in">Keep me signed in</label>
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="signup.js"></script>
+    <script>
+    $('#signup-form').on('submit', function(event) {
+        event.preventDefault();
+
+        // Clear previous error messages
+        $('.form-group').removeClass('has-error');
+        $('.form-group').find('.error-message').remove();
+
+        let isValid = true;
+
+        // Validate First Name
+        if ($('#first-name').val().trim() === '') {
+            $('#first-name').closest('.form-group').addClass('has-error');
+            $('#first-name').closest('.form-group').append('<div class="error-message">First Name is required</div>');
+            isValid = false;
+        }
+
+        // Validate Last Name
+        if ($('#last-name').val().trim() === '') {
+            $('#last-name').closest('.form-group').addClass('has-error');
+            $('#last-name').closest('.form-group').append('<div class="error-message">Last Name is required</div>');
+            isValid = false;
+        }
+
+        // Validate Username
+        if ($('#username').val().trim() === '') {
+            $('#username').closest('.form-group').addClass('has-error');
+            $('#username').closest('.form-group').append('<div class="error-message">Username is required</div>');
+            isValid = false;
+        }
+
+        // Validate Phone Number
+        const phonePattern = /^\+\d{1,4} \d{7,15}$/;
+        if (!phonePattern.test($('#phone').val().trim())) {
+            $('#phone').closest('.form-group').addClass('has-error');
+            $('#phone').closest('.form-group').append('<div class="error-message">Enter a valid phone number</div>');
+            isValid = false;
+        }
+
+        if (isValid) {
+            alert('Form is valid!'); // Replace with form submission or AJAX request
+        }
+    });
+
+    </script>
+</body>
+</html>
