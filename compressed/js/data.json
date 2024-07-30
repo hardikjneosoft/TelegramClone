@@ -36,43 +36,68 @@
     },{
         "name": "John Doe",
         "time": "11:26 PM",
-        "pimg": "./img/profile-5.png",
+        "pimg": "./img/profile-5.jpg",
         "unread": 1,
         "msg": "Dummy msg"
     },{
         "name": "John Doe",
         "time": "11:26 PM",
-        "pimg": "./img/profile-6.png",
+        "pimg": "./img/profile-6.jpg",
         "unread": 1,
         "msg": "Dummy msg"
     },{
         "name": "John Doe",
         "time": "11:26 PM",
-        "pimg": "./img/profile-7.png",
+        "pimg": "./img/profile-7.jpg",
         "unread": 1,
         "msg": "Dummy msg"
     },{
         "name": "John Doe",
         "time": "11:26 PM",
-        "pimg": "./img/profile-8.png",
+        "pimg": "./img/profile-8.jpg",
         "unread": 1,
         "msg": "Dummy msg"
     },{
         "name": "John Doe",
         "time": "11:26 PM",
-        "pimg": "./img/profile-9.png",
+        "pimg": "./img/profile-9.jpg",
+        "unread": 1,
+        "msg": "Dummy msg"
+    },
+    {
+        "name": "John Doe",
+        "time": "11:26 PM",
+        "pimg": "./img/profile-4.png",
         "unread": 1,
         "msg": "Dummy msg"
     },{
         "name": "John Doe",
         "time": "11:26 PM",
-        "pimg": "./img/profile-img.png",
+        "pimg": "./img/profile-5.jpg",
         "unread": 1,
         "msg": "Dummy msg"
     },{
         "name": "John Doe",
         "time": "11:26 PM",
-        "pimg": "./img/profile-img.png",
+        "pimg": "./img/profile-6.jpg",
+        "unread": 1,
+        "msg": "Dummy msg"
+    },{
+        "name": "John Doe",
+        "time": "11:26 PM",
+        "pimg": "./img/profile-7.jpg",
+        "unread": 1,
+        "msg": "Dummy msg"
+    },{
+        "name": "John Doe",
+        "time": "11:26 PM",
+        "pimg": "./img/profile-8.jpg",
+        "unread": 1,
+        "msg": "Dummy msg"
+    },{
+        "name": "John Doe",
+        "time": "11:26 PM",
+        "pimg": "./img/profile-9.jpg",
         "unread": 1,
         "msg": "Dummy msg"
     }

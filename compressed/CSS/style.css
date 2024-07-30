@@ -206,7 +206,7 @@ main {
 .right-side .chat-list .chat-box .chat-img{
     width: 5.4rem;
     height: 5.4rem;
-    flex-basis:20% ; 
+    flex-basis:17% ; 
     justify-content: center;
 }
 

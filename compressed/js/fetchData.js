@@ -8,10 +8,10 @@ fetch('./js/data.json')
   })
   .then(chatData => {
 
-            let chatList = $('.chat-list');
-            if (chatData) {
-            chatData.forEach(element => {
-                let chatBox = `<div class="chat-box">
+    let chatList = $('.chat-list');
+    if (chatData) {
+      chatData.forEach((element, index) => {
+        let chatBox = `<div class="chat-box" id="chat-${index}">
             <div class="chat-img">
                 <img src="${element.pimg}" alt="">
             </div>
@@ -26,15 +26,21 @@ fetch('./js/data.json')
                 </div>   
             </div>
             </div>`;
-                // console.log(chatBox);
-                chatList.append($(chatBox));
-            });
+        // console.log(chatBox);
 
-            $(".chat-box").on('click',()=>{
-                $("#chatBox").addClass('active')
-            })
-            
-            }
+        chatList.append($(chatBox));
+
+        $(`#chat-${index}`).on('click', () => {
+          // $("#chatBox").addClass('active')
+          console.log('clie', index);
+          // let user =$("#chatBox")
+          // $(".content .container .content-header .image img").hide()
+          $(".content .container .content-header .image img").attr('src', element.pimg)
+          $(".content .container .content-header .details h3").text(element.name)
+        })
+      });
+
+    }
 
   })
   .catch(error => {

@@ -42,10 +42,10 @@ handleNewMessage = function(){
     inputMsgBox.val('')
     inputMsgBox.trigger('input')
     chatContainer = $('.chat-container')
-    sendMsg = `<div class="chat-msg">
+    sendMsg = `<div class="chat-msg sent">
                         <p>${msg}</p>
                         <span class="time">${getTime()}</span>
-                    </div><div class="chat-msg sent">
+                    </div><div class="chat-msg ">
                         <p>${msg}</p>
                         <span class="time">${getTime()}</span>
                     </div>`
