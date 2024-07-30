@@ -41,7 +41,6 @@
         .form-group input {
             width: 100%;
             padding: 10px;
-            /* padding-top: 14px; */
             border: 1px solid #ccc;
             border-radius: 9px;
             font-size: 16px;
@@ -55,7 +54,6 @@
             background: white;
             padding: 0 5px;
             font-size: 12px;
-            /* color: #666; */
         }
         .checkbox-container {
             display: flex;
@@ -89,6 +87,20 @@
             font-weight: lighter;
             padding-bottom: 10px;
         }
+        .form-group.has-error input,
+        .form-group.has-error select {
+            border-color: red;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        button{
+            border: none;
+            background-color: transparent;
+        }
     </style>
 </head>
 <body>
@@ -96,7 +108,7 @@
         <img src="https://telegram.org/img/t_logo.png" alt="Telegram Logo">
         <h2>Telegram</h2>
         <p>Please confirm your country code and <br>enter your phone number.</p>
-        <form>
+        <form id="login-form" novalidate>
             <div class="form-group">
                 <label for="country">Country</label>
                 <select id="country" name="country">
@@ -198,20 +210,60 @@
                 <label for="phone">Your phone number</label>
                 <input type="tel" id="phone" name="phone" value="+91 ">
             </div>
-            <a href="./login-code.html"><i class="fas fa-arrow-right""></i></a>
+            <button type="submit"><a href="./login-code.html"><i class="fas fa-arrow-right"></i></a></button>
             <div class="checkbox-container">
                 <input type="checkbox" id="keep-signed-in" name="keep-signed-in" checked>
                 <label for="keep-signed-in">Keep me signed in</label>
             </div>
-            <!-- <div>
-                <br><h3>OR</h3><br>
-                <a href="#" class="link">LOG IN BY QR CODE</a>
-            </div> -->
-
         </form>
     </div>
-    <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            // Function to validate phone number
+            function validatePhoneNumber() {
+                const phone = $('#phone').val().trim();
+                const phonePattern = /^\+\d{2} \d{10}$/; // +<country code><10 digits>
+                
+                if (!phonePattern.test(phone)) {
+                    $('#phone').parent().addClass('has-error');
+                    $('#phone').siblings('.error-message').remove(); // Remove existing error messages
+                    $('#phone').after('<div class="error-message">Please enter a valid phone number with country code.</div>');
+                    return false;
+                } else {
+                    $('#phone').parent().removeClass('has-error');
+                    $('#phone').siblings('.error-message').remove(); // Remove existing error messages
+                    return true;
+                }
+            }
+
+            // Validate fields on blur
+            $('#phone').on('blur', function() {
+                validatePhoneNumber();
+            });
+
+            // Validate fields on form submit
+            $('#login-form').on('submit', function(e) {
+                e.preventDefault();
+                
+                let isValid = true;
+                
+                if (!validatePhoneNumber()) isValid = false;
+                
+                if (isValid) {
+                    // If all validations pass, submit the form or do something else
+                    alert('Form is valid and ready to be submitted!');
+                    window.location.replace("./login-code.html")
+
+                    // Uncomment the line below to actually submit the form
+                    // this.submit();
+                } else {
+                    alert('Please correct the errors in the form.');
+                }
+            });
+        });
+    </script>
     <script src="navbar.js"></script>
 </body>
 </html>
