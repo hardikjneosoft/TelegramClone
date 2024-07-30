@@ -5,7 +5,7 @@ let inputSearch = $(".search-box input").first()
 let faArrowLeft = $(".fa-arrow-left")
 let files = $("#files")
 let sendButton = $(".fas.fa-paper-plane")
-
+// let hamburger = $(".toggle-button")
 
 
 let inputMsgBox = $(".content .container .message-box .message-content input")

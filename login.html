@@ -221,14 +221,13 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
-            // Function to validate phone number
             function validatePhoneNumber() {
                 const phone = $('#phone').val().trim();
-                const phonePattern = /^\+\d{2} \d{10}$/; // +<country code><10 digits>
+                const phonePattern = /^\+\d{2} \d{10}$/; 
                 
                 if (!phonePattern.test(phone)) {
                     $('#phone').parent().addClass('has-error');
-                    $('#phone').siblings('.error-message').remove(); // Remove existing error messages
+                    $('#phone').siblings('.error-message').remove(); 
                     $('#phone').after('<div class="error-message">Please enter a valid phone number with country code.</div>');
                     return false;
                 } else {
@@ -238,12 +237,10 @@
                 }
             }
 
-            // Validate fields on blur
             $('#phone').on('blur', function() {
                 validatePhoneNumber();
             });
 
-            // Validate fields on form submit
             $('#login-form').on('submit', function(e) {
                 e.preventDefault();
                 
@@ -252,11 +249,9 @@
                 if (!validatePhoneNumber()) isValid = false;
                 
                 if (isValid) {
-                    // If all validations pass, submit the form or do something else
                     alert('Form is valid and ready to be submitted!');
                     window.location.replace("./login-code.html")
 
-                    // Uncomment the line below to actually submit the form
                     // this.submit();
                 } else {
                     alert('Please correct the errors in the form.');
