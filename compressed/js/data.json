@@ -33,5 +33,47 @@
         "pimg": "./img/profile-img.png",
         "unread": 1,
         "msg": "Dummy msg"
+    },{
+        "name": "John Doe",
+        "time": "11:26 PM",
+        "pimg": "./img/profile-img.png",
+        "unread": 1,
+        "msg": "Dummy msg"
+    },{
+        "name": "John Doe",
+        "time": "11:26 PM",
+        "pimg": "./img/profile-img.png",
+        "unread": 1,
+        "msg": "Dummy msg"
+    },{
+        "name": "John Doe",
+        "time": "11:26 PM",
+        "pimg": "./img/profile-img.png",
+        "unread": 1,
+        "msg": "Dummy msg"
+    },{
+        "name": "John Doe",
+        "time": "11:26 PM",
+        "pimg": "./img/profile-img.png",
+        "unread": 1,
+        "msg": "Dummy msg"
+    },{
+        "name": "John Doe",
+        "time": "11:26 PM",
+        "pimg": "./img/profile-img.png",
+        "unread": 1,
+        "msg": "Dummy msg"
+    },{
+        "name": "John Doe",
+        "time": "11:26 PM",
+        "pimg": "./img/profile-img.png",
+        "unread": 1,
+        "msg": "Dummy msg"
+    },{
+        "name": "John Doe",
+        "time": "11:26 PM",
+        "pimg": "./img/profile-img.png",
+        "unread": 1,
+        "msg": "Dummy msg"
     }
 ]
